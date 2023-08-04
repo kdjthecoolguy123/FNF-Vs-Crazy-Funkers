@@ -44,6 +44,13 @@ class CreditsState extends MusicBeatState
 		#end
 
 		var defaultList:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
+		        ['VS Crazy Funkers Team']
+			['KdjTheCoolGuy123',    'kdj',              'Creator, Animator, Artist, Composer & coder',                  'https://twitter.com/Shadow_Mario_'     'fff000'],
+			['BobbbyOfficial',    'bobbby',              'Composer'                                                       'https://twitter.com/Shadow_Mario_'     '444444'],
+			['ErenKaya',    'eren',              'Main coder & composer'                                                'https://twitter.com/Shadow_Mario_'     '444444'],
+			['AlexDima10YT',    'alex',              'Artist',                                                           'https://twitter.com/Shadow_Mario_'     '444444'],
+			['Matixd_candy',    'mati',              'Artist',                                                            'https://twitter.com/Shadow_Mario_'     '444444'],                                         
+			['']
 			['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
 			['Riveren',				'riveren',			'Main Artist/Animator of Psych Engine',							'https://twitter.com/riverennn',		'B42F71'],

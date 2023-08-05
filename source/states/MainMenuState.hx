@@ -116,7 +116,7 @@ class MainMenuState extends MusicBeatState
 
 		FlxG.camera.follow(camFollow, null, 0);
 		
-                var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "VS Crazy Funker's v1.0" 12);
+                var versionShit:FlxText = new FlxText(12, FlxG.height - 24, 0, "VS Crazy Funker's v1.0", 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);

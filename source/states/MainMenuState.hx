@@ -1,3 +1,34 @@
+Skip to content
+ErenKaya31Alt
+/
+CrazyFunkers
+
+Type / to search
+
+Code
+Pull requests
+Actions
+Projects
+Security
+Insights
+BreadcrumbsCrazyFunkers/source
+/MainMenuState.hx
+Go to file
+t
+Latest commit
+ErenKaya31Alt
+ErenKaya31Alt
+Update MainMenuState.hx
+86beba4
+ · 
+2 weeks ago
+History
+File metadata and controls
+
+Code
+
+Blame
+337 lines (289 loc) · 9.43 KB
 package;
 
 #if desktop
@@ -29,7 +60,7 @@ using StringTools;
 class MainMenuState extends MusicBeatState
 {
 	public static var psychEngineVersion:String = '0.5.2h'; //This is also used for Discord RPC
-	public static var cfVer:String = '1.0'; // ot :heart_eyes:
+	public static var omletsTortureVer:String = '1'; // ot :heart_eyes:
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -41,6 +72,7 @@ class MainMenuState extends MusicBeatState
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
+		'extras',
 		'options'
 	];
 
@@ -80,10 +112,10 @@ class MainMenuState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 		swagShader = new ColorSwap();
-		
-                var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
+
+		var yScroll:Float = Math.max(0.25 - (0.05 * (optionShit.length - 4)), 0.1);
 		var bg:FlxSprite = new FlxSprite(-80).loadGraphic(randomizeBG());
-		bg.scrollFactor.set(0, 0);
+		bg.scrollFactor.set(0, yScroll);
 		bg.setGraphicSize(Std.int(bg.width * 1.175));
 		bg.updateHitbox();
 		bg.screenCenter();
@@ -104,7 +136,7 @@ class MainMenuState extends MusicBeatState
 		add(camFollowPos);
 
 		magenta = new FlxSprite(-80).loadGraphic(bg.graphic);
-		magenta.scrollFactor.set(0, 0);
+		magenta.scrollFactor.set(0, yScroll);
 		magenta.setGraphicSize(Std.int(magenta.width * 1.175));
 		magenta.updateHitbox();
 		magenta.screenCenter();
@@ -151,7 +183,7 @@ class MainMenuState extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Crazy Funkers v" + cfVer, 12);
+		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Crazy Funkers v" + omletsTortureVer, 12);
 		versionShit.scrollFactor.set();
 		versionShit.setFormat(Paths.font("vcr.ttf"), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
@@ -274,6 +306,8 @@ class MainMenuState extends MusicBeatState
 										MusicBeatState.switchState(new AchievementsMenuState());
 									case 'credits':
 										MusicBeatState.switchState(new CreditsState());
+									case 'extras':
+										MusicBeatState.switchState(new ExtrasMenuState());
 									case 'options':
 										LoadingState.loadAndSwitchState(new options.OptionsState());
 								}
@@ -332,3 +366,4 @@ class MainMenuState extends MusicBeatState
 			return Paths.image(bgPaths[chance]);
 		}
 }
+CrazyFunkers/source/MainMenuState.hx at master · ErenKaya31Alt/CrazyFunkers
